@@ -1,4 +1,5 @@
 import React from 'react';
+import CouponCanvas from 'renderer/components/CouponCanvas';
 import FooterBar from '../components/FooterBar';
 
 const pageContainerStyle = {
@@ -9,6 +10,7 @@ const pageContainerStyle = {
 function PageTest() {
   return (
     <div style={pageContainerStyle}>
+      <CouponCanvas />
       <FooterBar />
     </div>
   );
