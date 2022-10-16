@@ -1,29 +1,29 @@
 enum DetectionStatus {
-  DETECTION_STATUS_NONE = 'DETECTION_STATUS_NONE',
-  DETECTION_STATUS_PARTIAL = 'DETECTION_STATUS_PARTIAL',
-  DETECTION_STATUS_FULL = 'DETECTION_STATUS_FULL',
+  DETECTION_STATUS_NONE      = 'DETECTION_STATUS_NONE',
+  DETECTION_STATUS_PARTIAL   = 'DETECTION_STATUS_PARTIAL',
+  DETECTION_STATUS_FULL      = 'DETECTION_STATUS_FULL',
   DETECTION_STATUS_CONFIRMED = 'DETECTION_STATUS_CONFIRMED',
 }
 
 enum TestStatus {
-  TEST_STATUS_NONE = 'TEST_STATUS_NONE',
-  TEST_STATUS_PARTIAL = 'TEST_STATUS_PARTIAL',
-  TEST_STATUS_PAUSED = 'TEST_STATUS_PAUSED',
-  TEST_STATUS_FULL = 'TEST_STATUS_FULL',
-  TEST_STATUS_SKIPPED = 'TEST_STATUS_SKIPPED',
+  TEST_STATUS_NONE        = 'TEST_STATUS_NONE',
+  TEST_STATUS_PARTIAL     = 'TEST_STATUS_PARTIAL',
+  TEST_STATUS_PAUSED      = 'TEST_STATUS_PAUSED',
+  TEST_STATUS_FULL        = 'TEST_STATUS_FULL',
+  TEST_STATUS_SKIPPED     = 'TEST_STATUS_SKIPPED',
   TEST_STATUS_DONE_FAILED = 'TEST_STATUS_DONE_FAILED',
   TEST_STATUS_DONE_PASSED = 'TEST_STATUS_DONE_PASSED',
 }
 
 enum PadType {
-  PAD_TYPE_ANODE = 'ANODE',
+  PAD_TYPE_ANODE   = 'ANODE',
   PAD_TYPE_CATHODE = 'CATHODE',
 }
 
 type PadDetection = {
   type: PadType;
-  x: number;
-  y: number;
+  x   : number;
+  y   : number;
 };
 
 enum TextType {
@@ -35,26 +35,26 @@ enum TextType {
 }
 
 type TextDetection = {
-  type: TextType;
-  text: string;
-  x: number;
-  y: number;
-  width: number;
+  type  : TextType;
+  text  : string;
+  x     : number;
+  y     : number;
+  width : number;
   height: number;
 };
 
 type CouponInfo = {
-  uid: string;
+  uid   : string;
   status: {
     instructionsLoaded: boolean;
     mechanicallyLoaded: boolean;
-    imaged: boolean;
-    detections: DetectionStatus;
-    test: TestStatus;
+    imaged            : boolean;
+    detections        : DetectionStatus;
+    test              : TestStatus;
   };
   instructions: unknown;
-  imagePath: string;
-  detections: {
+  imagePath   : string;
+  detections  : {
     text: Array<TextDetection>;
     pads: Array<PadDetection>;
   };
@@ -62,7 +62,7 @@ type CouponInfo = {
 };
 
 type TestInfo = {
-  status: TestStatus;
+  status : TestStatus;
   coupons: Array<CouponInfo>;
 };
 
