@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Button } from 'react-bootstrap';
 import PageTest from './pages/PageTest';
+import { CouponContextProvider } from './classes/CouponContext';
 
 const MainMenu = () => {
   return (
@@ -27,11 +28,13 @@ const MainMenu = () => {
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainMenu />} />
-        <Route path="/Test" element={<PageTest />} />
-      </Routes>
-    </Router>
+    <CouponContextProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainMenu />} />
+          <Route path="/Test" element={<PageTest />} />
+        </Routes>
+      </Router>
+    </CouponContextProvider>
   );
 }
