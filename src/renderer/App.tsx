@@ -4,6 +4,7 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 import PageTest from './pages/PageTest';
 import { CouponContextProvider } from './classes/CouponContext';
+import PageLoad from './pages/PageLoad';
 
 const MainMenu = () => {
   return (
@@ -12,7 +13,7 @@ const MainMenu = () => {
         <Link to="Test">
           <Button className="MainMenuItem">Align / Calibrate</Button>
         </Link>
-        <Link to="Test">
+        <Link to="Load">
           <Button className="MainMenuItem">Load Coupons</Button>
         </Link>
         <Link to="Test">
@@ -33,6 +34,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainMenu />} />
           <Route path="/Test" element={<PageTest />} />
+          <Route path="/Load" element={<PageLoad />} />
         </Routes>
       </Router>
     </CouponContextProvider>
