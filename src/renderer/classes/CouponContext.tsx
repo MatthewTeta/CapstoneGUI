@@ -9,13 +9,14 @@ const CouponContext = createContext<CouponContextType | undefined>(undefined);
 
 type Props = {
   children: ReactNode;
-}
+};
 
 class CouponContextProvider extends React.Component<Props> {
   couponTemplater: CouponTemplater;
 
   constructor(props: Props) {
     super(props);
+    this.state = {};
     this.couponTemplater = new CouponTemplater(() => this.updateSelf());
   }
 
